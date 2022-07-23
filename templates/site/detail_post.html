@@ -1,0 +1,48 @@
+{%	extends 'site/index.html'	%}
+{%	load static  %}
+
+{%	block detail %}
+	
+	<header class="masthead" style="background-image: url('{{MEDIA_URL}}{{post.picture}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>خبر رسان </h1>
+            <span class="subheading">تیم خبری ایران </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto"  style="direction:rtl;text-align: justify;" >
+        
+        <div class="post-preview"  style="direction: rlt; text-align : justify;" >
+          
+            <h2 class="post-title">
+              <p  style="color: blue">{{post.title}} </p>
+            </h2>
+            <h4 class="post-subtitle" style="text-align: justify ; ">
+              {{post.discription|safe}}
+            </h4>
+          
+          <p class="post-meta">نوشته شده 
+            <a href="#">{{post.author}}</a>
+            {{post.created}}</p>
+        </div>
+        <hr>
+       <a href="{%  url 'home'  %}"> <button type="#" class="btn btn-primary" id="sendMessageButton">بازگشت به صفحه اخبار </button>
+       </a>
+        
+        
+
+      </div>
+    </div>
+  </div>
+
+{%	endblock %}
